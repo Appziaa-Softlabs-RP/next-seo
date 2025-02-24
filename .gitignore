@@ -1,0 +1,12 @@
+node_modules
+*.log
+.next
+.history
+dist
+cypress/videos
+cypress/screenshots
+coverage
+package-lock.json
+lib
+notes.md
+.DS_Store
