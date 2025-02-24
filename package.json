@@ -1,6 +1,6 @@
 {
-  "name": "next-seo",
-  "version": "6.6.0",
+  "name": "@rewardsplus/next-seo",
+  "version": "1.0.1",
   "description": "SEO plugin for Next.js projects",
   "source": "src/index.tsx",
   "main": "lib/next-seo.js",
@@ -51,7 +51,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rewardsplus/next-seo.git"
+    "url": "https://github.com/Appziaa-Softlabs-RP/next-seo.git"
   },
   "keywords": [
     "next.js",
