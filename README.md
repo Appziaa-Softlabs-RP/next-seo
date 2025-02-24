@@ -3519,6 +3519,7 @@ For reference and more info check [Google Docs](https://developers.google.com/se
 
 A massive thank you to [everyone who contributes](https://github.com/rewardsplus/next-seo/graphs/contributors) to this project 👏
 
+[![npm version](https://img.shields.io/npm/v/@rewardsplus/next-seo.svg)](https://www.npmjs.com/package/@rewardsplus/next-seo)
 
 ## Reference & Improvements
 
