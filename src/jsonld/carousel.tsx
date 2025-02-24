@@ -21,11 +21,11 @@ interface DefaultDataProps {
 
 interface ExtendedCourseJsonLdProps
   extends DefaultDataProps,
-    CourseJsonLdProps {}
+  CourseJsonLdProps { }
 
 interface ExtendedRecipeJsonLdProps
   extends DefaultDataProps,
-    RecipeJsonLdProps {}
+  RecipeJsonLdProps { }
 
 export interface MovieJsonLdProps {
   name: string;
@@ -43,15 +43,34 @@ export interface CustomJsonLdProps {
   type: string;
 }
 
+interface ReviewJsonLdProps {
+  reviewBody: string;
+  authorName: string;
+  authorType?: string; // e.g., "Person" or "Organization"
+  reviewRating?: {
+    ratingValue: string; // e.g., "4"
+    bestRating?: string; // e.g., "5"
+    worstRating?: string; // e.g., "1"
+  };
+  itemReviewedType?: string; // e.g., "Organization", "Product", "Service"
+  itemReviewedName: string;
+  datePublished?: string; // ISO 8601 format, e.g., "2025-02-24"
+  publisherName?: string; // Optional publisher
+  publisher: {
+    '@type': 'Organization';
+    name: string;
+  } | undefined;
+}
+
 export interface CarouselJsonLdProps extends JsonLdProps {
-  ofType: 'default' | 'movie' | 'recipe' | 'course' | 'custom';
+  ofType: 'default' | 'movie' | 'recipe' | 'course' | 'custom' | 'review';
   data:
-    | any
-    | DefaultDataProps[]
-    | MovieJsonLdProps[]
-    | ExtendedCourseJsonLdProps[]
-    | ExtendedRecipeJsonLdProps[]
-    | CustomJsonLdProps[];
+  | any
+  | DefaultDataProps[]
+  | MovieJsonLdProps[]
+  | ExtendedCourseJsonLdProps[]
+  | ExtendedRecipeJsonLdProps[]
+  | CustomJsonLdProps[];
 }
 
 function CarouselJsonLd({
@@ -105,13 +124,13 @@ function CarouselJsonLd({
             director: item.director
               ? Array.isArray(item.director)
                 ? item.director.map(director => ({
-                    '@type': 'Person',
-                    name: director.name,
-                  }))
+                  '@type': 'Person',
+                  name: director.name,
+                }))
                 : {
-                    '@type': 'Person',
-                    name: item.director.name,
-                  }
+                  '@type': 'Person',
+                  name: item.director.name,
+                }
               : undefined,
             review: setReviews(item.review),
           },
@@ -154,6 +173,40 @@ function CarouselJsonLd({
             },
           }),
         );
+
+      case 'review':
+        return (data as ReviewJsonLdProps[]).map((item, index) => ({
+          '@type': 'ListItem',
+          position: `${index + 1}`,
+          item: {
+            '@context': 'https://schema.org',
+            '@type': 'Review',
+            reviewBody: item.reviewBody,
+            author: {
+              '@type': item.authorType || 'Person', // Allows flexibility (Person or Organization)
+              name: item.authorName,
+            },
+            reviewRating: item.reviewRating
+              ? {
+                '@type': 'Rating',
+                ratingValue: item.reviewRating.ratingValue,
+                bestRating: item.reviewRating.bestRating || '5',
+                worstRating: item.reviewRating.worstRating || '1', // Optional, per Schema.org
+              }
+              : undefined,
+            itemReviewed: {
+              '@type': item.itemReviewedType || 'Organization', // Default to Organization
+              name: item.itemReviewedName,
+            },
+            datePublished: item.datePublished,
+            publisher: item.publisher
+              ? {
+                '@type': 'Organization',
+                name: item.publisherName,
+              }
+              : undefined,
+          },
+        }));
 
       case 'custom':
         return (data as CustomJsonLdProps[]).map((item, index) => ({

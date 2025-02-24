@@ -90,6 +90,7 @@ If you are using **`pages`** directory then `NextSeo` is **exactly what you need
       - [Course](#course-1)
       - [Movie](#movie)
       - [Recipe](#recipe-1)
+      - [Reviews](#reviews)
       - [Custom](#custom)
     - [Software App](#software-app)
     - [Organization](#organization)
@@ -3198,6 +3199,71 @@ export default () => (
 | `instructions.name` | The name of the instruction step.       |
 | `instructions.text` | The directions of the instruction step. |
 | `url`               | URL of the item's detailed page.        |
+
+
+#### Reviews
+```jsx
+import React from 'react';
+import { CarouselJsonLd } from '@rewardsplus/next-seo'; // Adjust based on your linked package name
+
+export default () => (
+  <>
+    <h1>Carousel Reviews JSON-LD</h1>
+    <CarouselJsonLd
+      ofType="review"
+      data={[
+        {
+          reviewBody: "Fantastic experience with this company!",
+          authorName: "Alice Johnson",
+          authorType: "Person",
+          reviewRating: {
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+          },
+          itemReviewedType: "Corporation",
+          itemReviewedName: "Example Corp",
+          datePublished: "2025-02-24",
+          publisher: {
+            '@type': 'Organization',
+            name: "Review Site Inc.",
+          },
+        },
+        {
+          reviewBody: "Decent service, but could improve delivery speed.",
+          authorName: "Bob Smith",
+          authorType: "Person",
+          reviewRating: {
+            ratingValue: "3",
+            bestRating: "5",
+          },
+          itemReviewedType: "Organization",
+          itemReviewedName: "Example Corp",
+          datePublished: "2025-02-25",
+          publisher: undefined,
+        },
+      ]}
+    />
+  </>
+);
+```
+
+**Data required properties**
+
+| Property                   | Info                                                                                                                      |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `reviewBody`               | The text content of the review.                                                                                           |
+| `authorName`               | The name of the review author.                                                                                            |
+| `itemReviewedName`         | The name of the entity being reviewed.                                                                                    |
+| `authorType`               | (Optional) Type of author (e.g., "Person" or "Organization"). Defaults to "Person".                                       |
+| `reviewRating`             | (Optional) Rating given in the review.                                                                                    |
+| `reviewRating.ratingValue` | The numeric score (e.g., "4").                                                                                            |
+| `reviewRating.bestRating`  | (Optional) Upper bound of the rating scale (e.g., "5"). Defaults to "5" if omitted.                                       |
+| `reviewRating.worstRating` | (Optional) Lower bound of the rating scale (e.g., "1"). Defaults to "1" if omitted.                                       |
+| `itemReviewedType`         | (Optional) Type of the reviewed entity (e.g., "Organization", "Product"). Defaults to "Organization".                     |
+| `datePublished`            | (Optional) Publication date in ISO 8601 format (e.g., "2025-02-24").                                                      |
+| `publisher`                | (Optional) The publisher of the review, as an object with type "Organization".                                            |
+| `publisher.name`           | The name of the publishing organization (required if publisher is provided; use publisher.name instead of publisherName). |
 
 #### Custom
 
