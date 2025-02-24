@@ -1,6 +1,6 @@
 {
   "name": "@rewardsplus/next-seo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SEO plugin for Next.js projects",
   "source": "src/index.tsx",
   "main": "lib/next-seo.js",
