@@ -111,13 +111,13 @@ If you are using **`pages`** directory then `NextSeo` is **exactly what you need
 First, install it:
 
 ```bash
-npm install next-seo
+npm install @rewardsplus/next-seo
 ```
 
 or
 
 ```bash
-yarn add next-seo
+yarn add @rewardsplus/next-seo
 ```
 
 ### Add SEO to Page
@@ -137,7 +137,7 @@ Then, you need to import `NextSeo` and add the desired properties. This will ren
 **Example with just title and description:**
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -157,7 +157,7 @@ But `NextSeo` gives you many more options that you can add. See below for a typi
 **Typical page example:**
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -222,7 +222,7 @@ Here is a typical example:
 
 ```jsx
 import App, { Container } from 'next/app';
-import { DefaultSeo } from 'next-seo';
+import { DefaultSeo } from '@rewardsplus/next-seo';
 
 // import your default seo configuration
 import SEO from '../next-seo.config';
@@ -276,7 +276,7 @@ export default {
 <p>
 
 ```ts
-import { DefaultSeoProps } from 'next-seo';
+import { DefaultSeoProps } from '@rewardsplus/next-seo';
 
 const config: DefaultSeoProps = {
   openGraph: {
@@ -395,7 +395,7 @@ Setting this to `true` will set `noindex,follow` (to set `nofollow`, please refe
 If you have a single page that you want no indexed you can achieve this by:
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -428,7 +428,7 @@ Setting this to `true` will set `index,nofollow` (to set `noindex`, please refer
 If you have a single page that you want no indexed you can achieve this by:
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -467,7 +467,7 @@ In addition to `index, follow` the `robots` meta tag accepts more properties to 
 Example:
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -702,7 +702,7 @@ Next SEO currently supports:
 #### Basic
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -759,7 +759,7 @@ Supplying multiple images will not break anything, but only one will be added to
 Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -832,7 +832,7 @@ Supplying multiple images will not break anything, but only one will be added to
 Full info on [http://ogp.me/](https://ogp.me/#structured)
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 const Page = () => (
   <>
     <NextSeo
@@ -866,7 +866,7 @@ export default Page;
 #### Article
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -942,7 +942,7 @@ Supplying multiple of any of the above will not break anything, but only one wil
 #### Book
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1016,7 +1016,7 @@ Supplying multiple of any of the above will not break anything, but only one wil
 #### Profile
 
 ```jsx
-import { NextSeo } from 'next-seo';
+import { NextSeo } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1121,7 +1121,7 @@ Please fully research when you should and shouldn't add multiple instances of JS
 ### Article
 
 ```jsx
-import { ArticleJsonLd } from 'next-seo';
+import { ArticleJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1161,7 +1161,7 @@ export default Page;
 ### Breadcrumb
 
 ```jsx
-import { BreadcrumbJsonLd } from 'next-seo';
+import { BreadcrumbJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1211,7 +1211,7 @@ export default Page;
 ### Blog
 
 ```jsx
-import { ArticleJsonLd } from 'next-seo';
+import { ArticleJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1239,7 +1239,7 @@ export default Page;
 ### Campground
 
 ```jsx
-import { CampgroundJsonLd } from 'next-seo';
+import { CampgroundJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1342,7 +1342,7 @@ export default Page;
 ### Recipe
 
 ```jsx
-import { RecipeJsonLd } from 'next-seo';
+import { RecipeJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1439,7 +1439,7 @@ export default Page;
 ### Sitelinks Search Box
 
 ```jsx
-import { SiteLinksSearchBoxJsonLd } from 'next-seo';
+import { SiteLinksSearchBoxJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1480,7 +1480,7 @@ Read the [documentation](https://developers.google.com/search/docs/appearance/st
 ### Course
 
 ```jsx
-import { CourseJsonLd } from 'next-seo';
+import { CourseJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1520,7 +1520,7 @@ export default Page;
 ### Dataset
 
 ```jsx
-import { DatasetJsonLd } from 'next-seo';
+import { DatasetJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1555,7 +1555,7 @@ export default Page;
 ### Corporate Contact
 
 ```jsx
-import { CorporateContactJsonLd } from 'next-seo';
+import { CorporateContactJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1617,7 +1617,7 @@ export default Page;
 ### FAQ Page
 
 ```jsx
-import { FAQPageJsonLd } from 'next-seo';
+import { FAQPageJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1654,7 +1654,7 @@ export default Page;
 ### How-to
 
 ```jsx
-import { HowToJsonLd } from 'next-seo';
+import { HowToJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -1713,7 +1713,7 @@ export default Page;
 ### Job Posting
 
 ```jsx
-import { JobPostingJsonLd } from 'next-seo';
+import { JobPostingJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2003,7 +2003,7 @@ Images are recommended for most of the types that you can use for `LocalBusiness
 ### Logo
 
 ```jsx
-import { LogoJsonLd } from 'next-seo';
+import { LogoJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2029,7 +2029,7 @@ export default Page;
 ### Product
 
 ```jsx
-import { ProductJsonLd } from 'next-seo';
+import { ProductJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2154,7 +2154,7 @@ More info on the product data type can be found [here](https://developers.google
 ### Social Profile
 
 ```jsx
-import { SocialProfileJsonLd } from 'next-seo';
+import { SocialProfileJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2204,7 +2204,7 @@ export default Page;
 ### News Article
 
 ```jsx
-import { NewsArticleJsonLd } from 'next-seo';
+import { NewsArticleJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2237,7 +2237,7 @@ export default Page;
 ### Park
 
 ```jsx
-import { ParkJsonLd } from 'next-seo';
+import { ParkJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2324,7 +2324,7 @@ export default Page;
 ### Video
 
 ```jsx
-import { VideoJsonLd } from 'next-seo';
+import { VideoJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2388,7 +2388,7 @@ export default Page;
 ### VideoGame
 
 ```jsx
-import { VideoGameJsonLd } from 'next-seo';
+import { VideoGameJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2481,7 +2481,7 @@ export default Page;
 ### Event
 
 ```jsx
-import { EventJsonLd } from 'next-seo';
+import { EventJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2647,7 +2647,7 @@ For reference and more info check [Google's Search Event DataType](https://devel
 Q&A pages are web pages that contain data in a question-and-answer format, which is one question followed by its answers.
 
 ```jsx
-import { QAPageJsonLd } from 'next-seo';
+import { QAPageJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2751,7 +2751,7 @@ For reference and more info check [Google's Search Q&A DataType](https://develop
 Collection pages are web pages. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an item scope, they will be assumed to be about the page.
 
 ```jsx
-import { CollectionPageJsonLd } from 'next-seo';
+import { CollectionPageJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2825,7 +2825,7 @@ For reference and more info check [Collection Page DataType](https://schema.org/
 Profile pages are web pages. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an item scope, they will be assumed to be about the page.
 
 ```jsx
-import { ProfilePageJsonLd } from 'next-seo';
+import { ProfilePageJsonLd } from '@rewardsplus/next-seo';
 
 const Page = () => (
   <>
@@ -2884,7 +2884,7 @@ For reference and more info check [Profile Page DataType](https://schema.org/Pro
 
 ```jsx
 import React from 'react';
-import { CarouselJsonLd } from 'next-seo';
+import { CarouselJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -2912,7 +2912,7 @@ export default () => (
 
 ```jsx
 import React from 'react';
-import { CarouselJsonLd } from 'next-seo';
+import { CarouselJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -2957,7 +2957,7 @@ export default () => (
 
 ```jsx
 import React from 'react';
-import { CarouselJsonLd } from 'next-seo';
+import { CarouselJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -3027,7 +3027,7 @@ export default () => (
 
 ```jsx
 import React from 'react';
-import { CarouselJsonLd } from 'next-seo';
+import { CarouselJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -3269,7 +3269,7 @@ export default () => (
 
 ```jsx
 import React from 'react';
-import { CarouselJsonLd } from 'next-seo';
+import { CarouselJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -3313,7 +3313,7 @@ export default () => (
 
 ```jsx
 import React from 'react';
-import { SoftwareAppJsonLd } from 'next-seo';
+import { SoftwareAppJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -3363,7 +3363,7 @@ For reference and more info check [Google docs for Software App](https://develop
 
 ```jsx
 import React from 'react';
-import { OrganizationJsonLd } from 'next-seo';
+import { OrganizationJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -3448,7 +3448,7 @@ For reference and more info check [Docs](https://schema.org/Organization)
 
 ```jsx
 import React from 'react';
-import { BrandJsonLd } from 'next-seo';
+import { BrandJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -3493,7 +3493,7 @@ For reference and more info check [Docs](https://schema.org/Brand)
 
 ```jsx
 import React from 'react';
-import { WebPageJsonLd } from 'next-seo';
+import { WebPageJsonLd } from '@rewardsplus/next-seo';
 
 export default () => (
   <>
@@ -3535,7 +3535,7 @@ For reference and more info check [Docs](https://schema.org/WebPage)
 
 ```jsx
 import React from 'react';
-import { ImageJsonLd } from 'next-seo';
+import { ImageJsonLd } from '@rewardsplus/next-seo';
 
 function Image() {
   return (
