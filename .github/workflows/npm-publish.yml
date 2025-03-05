@@ -2,7 +2,7 @@ name: Publish to npm
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   publish:
     runs-on: ubuntu-latest
